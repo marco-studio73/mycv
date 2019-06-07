@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>Ajouter une Description</h2>
+
+
+<mat-dialog-content [formGroup]="form">
+
+    <mat-form-field>
+
+        <input matInput
+                placeholder="Titre de la compétence"
+               formControlName="title">
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <mat-select placeholder="Choisir un type"
+            formControlName="type">
+
+            <mat-option value="developpement">Développement</mat-option>
+            <mat-option value="creation">Création</mat-option>
+            <mat-option value="others">Autres</mat-option>
+
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <textarea matInput placeholder="description"
+            formControlName="content"></textarea>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <input type="number" matInput placeholder="valeur"
+            formControlName="value">
+
+    </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button mat-raised-button class="bg-ligth"
+    (click)="save()">
+      Ajouter
+    </button>
+
+    <button mat-button class=""
+            (click)="close()">
+        Annuler
+    </button>
+
+    
+
+</mat-dialog-actions>

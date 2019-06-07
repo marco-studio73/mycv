@@ -1,8 +1,12 @@
+<button *ngIf="!this.isLocalDev" mat-raised-button class="m-3 add-skill" (click)="openDialogAddSkill(skill)"> Ajouter une compétence</button>
+
 <div class="container-fluid pt-2 d-flex flex-column"  >
+
+  
 
   <h4>Développement</h4>
 
-  <div class="container-fluid justify-content-start" fxFlex fxLayout="row wrap" fxLayoutGap="15px">
+  <div class="container-fluid justify-content-start" ngClass.lt-md="justify-content-center" fxFlex fxLayout="row wrap" fxLayoutGap="15px">
     <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>

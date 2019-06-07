@@ -1,8 +1,14 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+const index = require('./routes/routes');
 
 const app = express();
+
+require('./database/db');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(index);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/public/mycv'));

@@ -1,17 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
+$mainbgcolor: #fc6730;
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* Styles for the ink bar */
-
 
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
-  background-color: #fc6730
+  background-color: $mainbgcolor
+}
+
+mat-form-field.mat-form-field{
+  display: initial
+}
+
+button.mat-raised-button{
+  background-color: $mainbgcolor;
+  color:#fff
 }
 
 .mat-progress-bar-fill::after{
-  background-color: #fc6730
+  background-color: $mainbgcolor
 }
 
 .mat-content{

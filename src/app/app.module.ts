@@ -17,7 +17,9 @@ import { FormationsComponent } from './formations/formations.component';
 import { ProductionsComponent } from './productions/productions.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MotivationComponent } from './motivation/motivation.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SkillsService } from './shared/skills.service';
+import { SkillDialogComponent } from './skills/skill-dialog/skill-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     FormationsComponent,
     ProductionsComponent,
     AboutMeComponent,
-    MotivationComponent
+    MotivationComponent,
+    SkillDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +42,11 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SkillsService],
+  entryComponents:[SkillDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

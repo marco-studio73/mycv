@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatMenuModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDividerModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSliderModule } from '@angular/material';
+import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatMenuModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDividerModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSliderModule, MatDialogModule, MatOptionModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -20,7 +20,11 @@ import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, 
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDialogModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSnackBarModule
 
   ],
   exports: [
@@ -39,7 +43,11 @@ import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, 
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDialogModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSnackBarModule
   ],
   declarations: []
 })
