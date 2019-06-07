@@ -16,6 +16,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { FormationsComponent } from './formations/formations.component';
 import { ProductionsComponent } from './productions/productions.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { MotivationComponent } from './motivation/motivation.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { AboutMeComponent } from './about-me/about-me.component';
     SkillsComponent,
     FormationsComponent,
     ProductionsComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    MotivationComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

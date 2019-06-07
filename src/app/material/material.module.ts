@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatMenuModule, MatFormFieldModule, MatInputModule, MatCardModule } from '@angular/material';
+import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatMenuModule, MatFormFieldModule, MatInputModule, MatCardModule, MatDividerModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSliderModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -16,6 +16,12 @@ import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, 
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatDividerModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatSliderModule
+
   ],
   exports: [
     MatMenuModule,
@@ -28,7 +34,12 @@ import { MatExpansionModule, MatTabsModule, MatSidenavModule, MatToolbarModule, 
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatSliderModule
   ],
   declarations: []
 })

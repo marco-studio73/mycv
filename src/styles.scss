@@ -2,3 +2,26 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Styles for the ink bar */
+
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  background-color: #fc6730
+}
+
+.mat-progress-bar-fill::after{
+  background-color: #fc6730
+}
+
+.mat-content{
+  align-items: center
+} 
+
+.mat-expansion-indicator.ng-tns-c22-3.ng-trigger.ng-trigger-indicatorRotate.ng-star-inserted::after{
+  margin-top: -3px
+}
+
+.mat-expansion-indicator::after{
+  margin-top: -6px
+}
