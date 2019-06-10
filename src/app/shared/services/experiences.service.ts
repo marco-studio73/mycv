@@ -26,7 +26,8 @@ export class ExperiencesService {
               .delete(`${this.uri}/${id}`);
   }
 
-  updateExperience(id, experience){
+  updateExperience(id, experience) {
+    console.log(id, experience);
     return this.http.post(`${this.uri}/update/${id}`, experience);
   }
 

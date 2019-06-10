@@ -40,7 +40,7 @@ export class ExperiencesComponent implements OnInit {
 
     console.log(dialogConfig.data);
 
-    
+
     const dialogRef = this.dialog.open(ExperienceDialogComponent,
     dialogConfig);
 
@@ -53,20 +53,20 @@ export class ExperiencesComponent implements OnInit {
               this.experiencesList = res.experiences;
             });
           }
-         
+
         }
       );
     }else{
       dialogRef.afterClosed().subscribe(
         val => {
           this.expService.updateExperience(id, val).subscribe((res:any) => {
-            this.experiencesList = res;
+            this.experiencesList = res.experiences;
           });
         }
       )
     }
 
-   
+
   }
 
   ngOnInit() {
