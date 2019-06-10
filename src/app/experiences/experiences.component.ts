@@ -28,23 +28,32 @@ export class ExperiencesComponent implements OnInit {
     });
   }
 
-  openDialogAddExp(exp, id) {
+  openDialogEditExp(exp, id) {
+    const dialogConfig =  new MatDialogConfig();
+    dialogConfig.data = exp;
+
+    const dialogRef = this.dialog.open(ExperienceDialogComponent,
+      dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      val => {
+        this.expService.updateExperience(id, val).subscribe((res:any) => {
+          this.experiencesList = res.experiences;
+        });
+      }
+    )
+  }
+
+  openDialogAddExp() {
 
     const dialogConfig =  new MatDialogConfig();
 
-    if(id == undefined) {
-      dialogConfig.data = {};
-    }else{
-      dialogConfig.data = exp;
-    }
-
-    console.log(dialogConfig.data);
+    dialogConfig.data = {};
 
 
     const dialogRef = this.dialog.open(ExperienceDialogComponent,
     dialogConfig);
 
-    if(id == undefined) {
       dialogRef.afterClosed().subscribe(
         val => {
           console.log(val);
@@ -56,17 +65,6 @@ export class ExperiencesComponent implements OnInit {
 
         }
       );
-    }else{
-      dialogRef.afterClosed().subscribe(
-        val => {
-          this.expService.updateExperience(id, val).subscribe((res:any) => {
-            this.experiencesList = res.experiences;
-          });
-        }
-      )
-    }
-
-
   }
 
   ngOnInit() {

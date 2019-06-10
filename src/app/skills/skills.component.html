@@ -1,4 +1,4 @@
-<button mat-raised-button class="m-3 add-skill" (click)="openDialogAddSkill(skill)"> Ajouter une compétence</button>
+<button mat-raised-button class="m-3 add-skill" (click)="openDialogAddSkill()"> Ajouter une compétence</button>
 
 <div class="container-fluid pt-2 d-flex flex-column"  >
 
@@ -9,7 +9,7 @@
           {{skill.title}}
           <label><em>{{skill.mode}}</em></label>
         </mat-panel-title>
-       
+
         <mat-panel-description>
           <mat-progress-bar mode="determinate" value="{{skill.value}}"></mat-progress-bar>
         </mat-panel-description>
@@ -18,11 +18,11 @@
       <p>{{skill.content}}</p>
 
       <button class="btn btn-sm bg-danger text-white" (click)="deleteSkill(skill._id, i)">Supprimer</button>
-  
+
     </mat-expansion-panel>
 
-  </mat-accordion>  
+  </mat-accordion>
 
-  
+
 
 </div>
