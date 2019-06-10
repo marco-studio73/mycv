@@ -18,7 +18,8 @@
 
           <p fxHide.lg [innerHTML]="exp.content"></p>
 
-          <button class="btn btn-sm bg-light" (click)="openDialogEditExp(exp, exp._id)">Editer</button>
+          <button class="btn btn-sm bg-light mr-2" (click)="openDialogEditExp(exp, exp._id)">Editer</button>
+          <button class="btn btn-sm bg-danger text-white" (click)="deleteExp(exp._id)">Supprimer</button>
 
         </mat-expansion-panel>
 

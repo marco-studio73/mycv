@@ -18,9 +18,9 @@ export class ExperiencesComponent implements OnInit {
 
   experiencesList = [];
 
-  constructor(public dialog: MatDialog, private expService:ExperiencesService) { }
+  constructor(public dialog: MatDialog, private expService: ExperiencesService) { }
 
-  getAllExperiences(){
+  getAllExperiences() {
     this.expService
     .getAllExperiences()
     .subscribe((data: any) => {
@@ -37,11 +37,11 @@ export class ExperiencesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(
       val => {
-        this.expService.updateExperience(id, val).subscribe((res:any) => {
+        this.expService.updateExperience(id, val).subscribe(( res: any )  => {
           this.experiencesList = res.experiences;
         });
       }
-    )
+    );
   }
 
   openDialogAddExp() {
@@ -54,12 +54,13 @@ export class ExperiencesComponent implements OnInit {
     const dialogRef = this.dialog.open(ExperienceDialogComponent,
     dialogConfig);
 
-      dialogRef.afterClosed().subscribe(
+    dialogRef.afterClosed().subscribe(
         val => {
           console.log(val);
-          if(val != undefined){
-            this.expService.postExperience(val).subscribe((res:any) => {
-              this.experiencesList = res.experiences;
+          if (val !== undefined) {
+            this.expService.postExperience(val).subscribe((res: any) => {
+              console.log(res);
+              this.experiencesList = res;
             });
           }
 
@@ -67,9 +68,15 @@ export class ExperiencesComponent implements OnInit {
       );
   }
 
+  deleteExp(id) {
+    this.expService.deleteExperience(id).subscribe((res: any) => {
+      this.experiencesList = res.experiences;
+    });
+  }
+
   ngOnInit() {
 
-    this.getAllExperiences()
+    this.getAllExperiences();
 
   }
 

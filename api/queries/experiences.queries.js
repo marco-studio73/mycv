@@ -1,7 +1,7 @@
 const Experiences = require('../database/models/experiences.model');
 
 exports.getAllExperiences = () => {
-  return Experiences.find({}).exec();
+  return Experiences.find({}).sort({endDate: 'desc'}).exec();
 }
 
 exports.postExperience = (experience) => {
@@ -19,4 +19,4 @@ exports.updateExperience = (experienceId, experience) => {
 
 exports.getExperience = (experienceId) => {
   return Experiences.findOne({ _id: experienceId }).exec();
-} 
+}
