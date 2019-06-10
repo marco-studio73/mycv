@@ -1,0 +1,67 @@
+<h2 mat-dialog-title>{{description}}</h2>
+
+
+<mat-dialog-content [formGroup]="ExperienceForm">
+
+    <mat-form-field>
+
+        <input matInput
+                placeholder="Titre"
+               formControlName="title">
+
+    </mat-form-field>
+    <mat-form-field>
+
+      <input matInput
+              placeholder="Poste"
+             formControlName="poste">
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <input matInput [matDatepicker]="myDatepicker"
+            formControlName="beginDate" datetime="dd-MM-yyyy" placeholder="Date de début">
+
+        <mat-datepicker-toggle matSuffix
+                               [for]="myDatepicker">
+
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #myDatepicker></mat-datepicker>
+
+    </mat-form-field>
+    <mat-form-field>
+
+      <input matInput [matDatepicker]="mySecondDatepicker"
+          formControlName="endDate" datetime="dd-MM-yyyy" placeholder="Date de fin">
+
+      <mat-datepicker-toggle matSuffix
+                             [for]="mySecondDatepicker">
+
+      </mat-datepicker-toggle>
+
+      <mat-datepicker #mySecondDatepicker></mat-datepicker>
+
+  </mat-form-field>
+
+  <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" formControlName="content"></app-ngx-editor>
+
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button class="mat-raised-button"
+            (click)="close()">
+        Close
+    </button>
+
+    <button class="mat-raised-button mat-primary"
+            (click)="save()">
+        Save
+    </button>
+
+</mat-dialog-actions>
+

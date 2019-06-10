@@ -1,7 +1,6 @@
 const Skill = require('../database/models/skills.model');
 
 exports.getSkills = () => {
-  console.log('find skill');
   return Skill.find({}).exec();
 }
 

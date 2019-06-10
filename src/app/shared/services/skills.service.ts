@@ -8,22 +8,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SkillsService {
 
+  uri = 'http://localhost:3000/skills';
+
   constructor(private http: HttpClient) { }
 
   getSkills() {
     return this
            .http
-           .get('');
+           .get(`${this.uri}`);
   }
 
-  postSkill(skill) {
-    return this.http.post('', skill);
+  postSkill(skill: any) {
+    return this.http.post(`${this.uri}`, skill);
   }
 
-  deleteskill(id) {
+  deleteSkill(id) {
     return this
               .http
-              .delete(`/${id}`);
+              .delete(`${this.uri}/${id}`);
   }
 
   updateskill(id, skill){

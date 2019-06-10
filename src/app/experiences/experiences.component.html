@@ -1,16 +1,25 @@
+<button mat-raised-button class="m-3 add-skill" (click)="openDialogAddExp()"> Ajouter une expérience</button>
+
+
 <div class="container-fluid pt-2">
-    <mat-accordion>
+    <mat-accordion *ngFor="let exp of experiencesList; let i = index">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Pentila
+              {{exp.title}}
             </mat-panel-title>
             <mat-panel-description fxHide.xs>
-              Developpeur front end - webdesigner
+              {{exp.poste}}
             </mat-panel-description>
           </mat-expansion-panel-header>
 
-          <p fxHide.lg>Developpeur front-end & webdesigner</p>
+          <div class="d-flex mb-1 align-items-center">
+            <p> <i class="fa fa-calendar-alt mr-2" aria-hidden="true"></i> du {{ exp.beginDate | date: 'dd/MM/yyyy' }} au {{ exp.endDate | date: 'dd/MM/yyyy' }}</p>
+          </div>
+
+          <p fxHide.lg [innerHTML]="exp.content"></p>
+
+          <button class="btn btn-sm bg-light" (click)="openDialogAddExp(exp, exp._id)">Editer</button>
       
         </mat-expansion-panel>
 

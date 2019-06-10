@@ -14,35 +14,23 @@ export class SkillDialogComponent implements OnInit {
 
   form: FormGroup;
 
-  title: String;
-  content: String;
-  value: Number;
-  type: String;
-
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<SkillDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) {title, content, value, type}:SkillInterface
+    @Inject(MAT_DIALOG_DATA) {title, content, value, mode}:SkillInterface
   ) {
-
-    this.title = title;
-    this.content = content;
-    this.value = value;
-    this.type = type;
-
 
     this.form = fb.group({
         title: [title, Validators.required],
         content: [content],
         value: [value, Validators.required],
-        type: [type, Validators.required]
+        mode: [mode, Validators.required]
     });
 
   }
 
    save() {
     this.dialogRef.close(this.form.value);
-    console.log(this.form)
   };
 
   close() {

@@ -1,10 +1,10 @@
 <div class="container-fluid pt-3">
 
-  <div class="card">
+  <div class="card"> 
     <div class="card-body">
-      <div class="d-flex flex-row">
-        <img src="../../assets/img/profil-img.jpg" alt="profile img">
-        <div class="desc d-flex flex-column justify-content-start text-justify">
+      <div [ngClass]="classDisplayed" class="d-flex flex-row">
+        <img [ngClass]="imgMobileDisplayed" src="../../assets/img/profil-img.jpg" alt="profile img">
+        <div class="desc d-flex flex-column justify-content-start">
           <h2 class="mb-1">Marc SUAREZ-LACHAUD</h2>
           <label><em>Développeur front-end / UI Designer</em></label>
 

@@ -3,8 +3,9 @@ import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 
 
 import { environment } from '../../environments/environment';
-import SkillInterface from '../shared/interface/skill.interface';
+
 import { SkillDialogComponent } from './skill-dialog/skill-dialog.component';
+import { SkillsService } from '../shared/services/skills.service';
 
 
 
@@ -18,33 +19,46 @@ export class SkillsComponent implements OnInit {
   @Input()
 
 
-  developmentSkills: [];
-  creationSkills: [];
-  otherSkills: [];
+  skillsList = [];
 
-  constructor( public dialog: MatDialog) { }
+  constructor( public dialog: MatDialog, private skillService:SkillsService) { }
 
   isLocalDev = environment.production
 
+  getAllSkills(){
+    this.skillService
+    .getSkills()
+    .subscribe((data: any) => {
+      this.skillsList = data.skills;
+    });
+  }
+
   openDialogAddSkill() {
 
-    console.log('open');
-
     const dialogConfig =  new MatDialogConfig();
-
     dialogConfig.data = {};
 
     const dialogRef = this.dialog.open(SkillDialogComponent,
-      dialogConfig);
+    dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-      val => console.log("Dialog output:", val)
+      val => {
+        this.skillService.postSkill(val).subscribe((res:any) => {
+          this.skillsList = res;
+        });
+      }
   );
+  }
+
+  deleteSkill(id){
+    this.skillService.deleteSkill(id).subscribe((res:any) => {
+      this.skillsList = res.skills;
+    });
   }
 
   ngOnInit() {
 
-    console.log(this.isLocalDev);
+    this.getAllSkills()
 
   }
 

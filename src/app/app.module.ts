@@ -18,8 +18,15 @@ import { ProductionsComponent } from './productions/productions.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MotivationComponent } from './motivation/motivation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SkillsService } from './shared/skills.service';
+import { SkillsService } from './shared/services/skills.service';
 import { SkillDialogComponent } from './skills/skill-dialog/skill-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ExperiencesService } from './shared/services/experiences.service';
+import { ExperienceDialogComponent } from './experiences/experience-dialog/experience-dialog.component';
+
+import { DeviceDetectorModule } from 'ngx-device-detector';
+import { NgxEditorModule } from 'ngx-editor';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +41,8 @@ import { SkillDialogComponent } from './skills/skill-dialog/skill-dialog.compone
     ProductionsComponent,
     AboutMeComponent,
     MotivationComponent,
-    SkillDialogComponent
+    SkillDialogComponent,
+    ExperienceDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +51,13 @@ import { SkillDialogComponent } from './skills/skill-dialog/skill-dialog.compone
     FlexLayoutModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    DeviceDetectorModule.forRoot(),
+    NgxEditorModule
   ],
-  providers: [SkillsService],
-  entryComponents:[SkillDialogComponent],
+  providers: [SkillsService, ExperiencesService],
+  entryComponents:[SkillDialogComponent, ExperienceDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
