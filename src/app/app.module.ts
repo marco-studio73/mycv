@@ -26,6 +26,8 @@ import { ExperienceDialogComponent } from './experiences/experience-dialog/exper
 
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { NgxEditorModule } from 'ngx-editor';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { NgxEditorModule } from 'ngx-editor';
     ReactiveFormsModule,
     HttpClientModule,
     DeviceDetectorModule.forRoot(),
-    NgxEditorModule
+    NgxEditorModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [SkillsService, ExperiencesService],
   entryComponents:[SkillDialogComponent, ExperienceDialogComponent],

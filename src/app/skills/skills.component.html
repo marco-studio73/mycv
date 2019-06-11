@@ -7,10 +7,10 @@
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{skill.title}}
-          <label><em>{{skill.mode}}</em></label>
+          <label class="ml-3"><em>({{skill.mode}})</em></label>
         </mat-panel-title>
 
-        <mat-panel-description>
+        <mat-panel-description *ngIf="skill.value != undefined">
           <mat-progress-bar mode="determinate" value="{{skill.value}}"></mat-progress-bar>
         </mat-panel-description>
       </mat-expansion-panel-header>
