@@ -21,11 +21,11 @@ export class SkillsComponent implements OnInit {
 
   skillsList = [];
 
-  constructor( public dialog: MatDialog, private skillService:SkillsService) { }
+  constructor( public dialog: MatDialog, private skillService: SkillsService) { }
 
-  isLocalDev = environment.production
+  isLocalDev = environment.production;
 
-  getAllSkills(){
+  getAllSkills() {
     this.skillService
     .getSkills()
     .subscribe((data: any) => {
@@ -43,22 +43,22 @@ export class SkillsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(
       val => {
-        this.skillService.postSkill(val).subscribe((res:any) => {
+        this.skillService.postSkill(val).subscribe((res: any) => {
           this.skillsList = res;
         });
       }
   );
   }
 
-  deleteSkill(id){
-    this.skillService.deleteSkill(id).subscribe((res:any) => {
+  deleteSkill(id) {
+    this.skillService.deleteSkill(id).subscribe((res: any) => {
       this.skillsList = res.skills;
     });
   }
 
   ngOnInit() {
 
-    this.getAllSkills()
+    this.getAllSkills();
 
   }
 
